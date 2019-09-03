@@ -15,7 +15,7 @@ class TodoForm extends React.Component {
   submitTodo = event => {
     // prevent page refresh
     event.preventDefault();
-    // set new todo task
+    // add new todo task
     this.props.addTodo(this.state.newTask);
     // reset form input
     this.setState({ newTask: "" });
@@ -31,7 +31,7 @@ class TodoForm extends React.Component {
           onChange={this.handleInputChange}
         />
         <button type="submit">add todo</button>
-        <button>clear completed</button>
+        <button onClick={this.props.removeTodo}>clear completed</button>
       </form>
     );
   }
