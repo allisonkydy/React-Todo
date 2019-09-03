@@ -30,7 +30,7 @@ class App extends React.Component {
         // make a temp copy
         let todoData = [...this.state.todoData];
         // toggle completed property at current index
-        todoData[index].completed = !this.state.todoData[index].completed;
+        todoData[index].completed = !todo.completed;
         // update state with changed temp copy
         this.setState({ todoData: todoData });
       }
@@ -39,10 +39,10 @@ class App extends React.Component {
 
   // remove completed todos
   removeTodo = () => {
-    // make a temp copy
-    let todoData = [...this.state.todoData];
     // filter for incomplete tasks
-    const incomplete = todoData.filter(todo => todo.completed === false);
+    const incomplete = this.state.todoData.filter(
+      todo => !todo.completed
+    );
     // update state with copy
     this.setState({ todoData: incomplete });
   };
