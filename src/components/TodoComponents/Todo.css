@@ -1,0 +1,16 @@
+.complete, .incomplete {
+   width: 400px;
+   padding: 16px;
+   margin-bottom: 10px;
+   border: 2px solid #aaaaaa;
+}
+
+.complete {
+   text-decoration: line-through;
+   background-color: #aaaaaa;
+}
+
+.incomplete {
+   text-decoration: none;
+   background-color: #dbdbdb;
+}
