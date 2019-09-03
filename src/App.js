@@ -10,46 +10,27 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todoData: [
-        {
-          task: "Organize Garage",
-          id: 1528817077286,
-          completed: false
-        },
-        {
-          task: "Bake Cookies",
-          id: 1528817084358,
-          completed: false
-        }
-      ],
-      newTodo: {},
+      todoData: [],
+      newTodo: {}
     };
   }
 
-  // event handlers
-  handleInputChange = event => {
-    this.setState({ newTodo: {
-      task: event.target.value,
-      id: Date.now(),
-      completed: false
-    }})
-  }
-
-  handleSubmit = event => {
+  // adds new Todo object to todoData array
+  addTodo = newTask => {
     this.setState({
       todoData: [
-        ...this.todoData,
-        newTodo
+        ...this.state.todoData,
+        { task: newTask, id: Date.now(), completed: false }
       ]
     });
   };
-  
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoList todoData={this.state.todoData} />
-        <TodoForm handleSubmit={this.handleSubmit} />
+        <TodoForm addTodo={this.addTodo} />
       </div>
     );
   }
