@@ -3,21 +3,21 @@ import React from "react";
 import Todo from "./Todo";
 
 function TodoList(props) {
-  return (
-    <div>
+   return (
+      <div className="TodoList">
       {props.todoData.map(todoItem => {
-        return (
-          <Todo
+         return (
+            <Todo
             task={todoItem.task}
             key={todoItem.id}
             id={todoItem.id}
             completed={todoItem.completed}
             toggleComplete={props.toggleComplete}
-          />
-        );
+            />
+         );
       })}
-    </div>
-  );
+      </div>
+   );
 }
 
 export default TodoList;

@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Todo.css";
+
 function Todo(props) {
   const { task, toggleComplete, id, completed } = props;
   return (

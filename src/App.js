@@ -3,7 +3,7 @@ import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
 
-import "./components/TodoComponents/Todo.css";
+import "./App.css";
 
 class App extends React.Component {
   constructor() {
@@ -49,13 +49,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <div className="App">
+        <h1>a cool and nice todo app</h1>
+        <TodoForm addTodo={this.addTodo} removeTodo={this.removeTodo} />
         <TodoList
           todoData={this.state.todoData}
           toggleComplete={this.toggleComplete}
         />
-        <TodoForm addTodo={this.addTodo} removeTodo={this.removeTodo} />
       </div>
     );
   }
