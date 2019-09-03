@@ -15,7 +15,7 @@ class App extends React.Component {
 
   // add a new todo to the todo list
   addTodo = newTask => {
-    this.setState({
+    if (newTask.length > 0) this.setState({
       todoData: [
         ...this.state.todoData,
         { task: newTask, id: Date.now(), completed: false }
