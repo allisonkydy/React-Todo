@@ -1,9 +1,9 @@
 import React from 'react';
 
 function Todo(props) {
-   const { task, completed } = props;
+   const { task, toggleComplete, id, completed } = props;
    return (
-      <div>{task}</div>
+      <div onClick={() => toggleComplete(id)} className={completed ? "complete" : "incomplete"}>{task}</div>
    )
 }
 
